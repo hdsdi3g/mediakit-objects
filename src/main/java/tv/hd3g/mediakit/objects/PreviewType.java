@@ -32,9 +32,21 @@ public enum PreviewType {
 	 */
 	FULL_SIZE_THUMBNAIL,
 	/**
+	 * Full page displayed in a book reader (with page selection...)
+	 */
+	BOOK_FULL_PAGE,
+	/**
+	 * Full page in icon size, displayed in a book reader
+	 */
+	BOOK_ICON_PAGE,
+	/**
 	 * Displayed as an audio player
 	 */
 	AUDIO,
+	/**
+	 * Keyframe image for scrubbing in video player
+	 */
+	VIDEO_KEYFRAME,
 	/**
 	 * Displayed as a video player, low res/low bitrate
 	 */
@@ -48,16 +60,8 @@ public enum PreviewType {
 	 */
 	VIDEO_HD,
 	/**
-	 * Displayed as a book reader (with page selection...)
+	 * Subtitle file in audio/video player
 	 */
-	BOOK,
-	/**
-	 * Page in a book
-	 */
-	BOOK_PAGE;
+	SUBTITLE;
 
-	// TODO add subtitle ?
-	// TODO add keyframes images ?
-	// TODO add chapters ?
-	// TODO add markers ?
 }

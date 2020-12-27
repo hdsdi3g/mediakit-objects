@@ -20,41 +20,82 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Summary {// TODO test + comments
+/**
+ * How to display an asset to a webpage, does not matter its format/type ?
+ */
+public class AssetSummary {
 
+	/**
+	 * Computed original file mime code, like "application/octet-stream"
+	 */
 	private String mimeCode;
+	/**
+	 * Map of analyserName -&gt; analyserAbstactText
+	 */
 	private Map<String, String> analysersAbstracts;
+	/**
+	 * All registed previews for this asset.
+	 * You should sorted this list before use.
+	 */
 	private List<AssetPreview> previews;
+	/**
+	 * Is the master file can be send to clients without risks (functionnals, security or personnal informations leaks) ?
+	 */
 	private AssetPreview masterAsPreview;
 
+	/**
+	 * Computed original file mime code, like "application/octet-stream"
+	 */
 	public String getMimeCode() {
 		return mimeCode;
 	}
 
+	/**
+	 * Computed original file mime code, like "application/octet-stream"
+	 */
 	public void setMimeCode(final String mimeCode) {
 		this.mimeCode = mimeCode;
 	}
 
+	/**
+	 * Map of analyserName -&gt; analyserAbstactText
+	 */
 	public Map<String, String> getAnalysersAbstracts() {
 		return analysersAbstracts;
 	}
 
+	/**
+	 * Map of analyserName -&gt; analyserAbstactText
+	 */
 	public void setAnalysersAbstracts(final Map<String, String> analysersAbstracts) {
 		this.analysersAbstracts = analysersAbstracts;
 	}
 
+	/**
+	 * All registed previews for this asset.
+	 * You should sorted this list before use.
+	 */
 	public List<AssetPreview> getPreviews() {
 		return previews;
 	}
 
+	/**
+	 * All registed previews for this asset.
+	 */
 	public void setPreviews(final List<AssetPreview> previews) {
 		this.previews = previews;
 	}
 
+	/**
+	 * Is the master file can be send to clients without risks (functionnals, security or personnal informations leaks) ?
+	 */
 	public AssetPreview getMasterAsPreview() {
 		return masterAsPreview;
 	}
 
+	/**
+	 * Is the master file can be send to clients without risks (functionnals, security or personnal informations leaks) ?
+	 */
 	public void setMasterAsPreview(final AssetPreview masterAsPreview) {
 		this.masterAsPreview = masterAsPreview;
 	}
@@ -75,7 +116,7 @@ public class Summary {// TODO test + comments
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		final var other = (Summary) obj;
+		final var other = (AssetSummary) obj;
 		return Objects.equals(analysersAbstracts, other.analysersAbstracts) && Objects.equals(masterAsPreview,
 		        other.masterAsPreview) && Objects.equals(mimeCode, other.mimeCode) && Objects.equals(previews,
 		                other.previews);

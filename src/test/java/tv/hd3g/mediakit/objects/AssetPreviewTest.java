@@ -16,13 +16,18 @@
  */
 package tv.hd3g.mediakit.objects;
 
+import static java.util.stream.Collectors.toUnmodifiableList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static tv.hd3g.mediakit.objects.PreviewType.BOOK;
+import static tv.hd3g.mediakit.objects.PreviewType.ICON_THUMBNAIL;
+import static tv.hd3g.mediakit.objects.PreviewType.SUBTITLE;
 import static tv.hd3g.mediakit.objects.PreviewType.VIDEO_HD;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -116,9 +121,73 @@ class AssetPreviewTest {
 		ap2.setAssetLocation(assetLocation);
 		assertEquals(ap, ap2);
 
-		ap.setType(BOOK);
-		ap2.setType(BOOK);
+		ap.setType(SUBTITLE);
+		ap2.setType(SUBTITLE);
 		assertEquals(ap, ap2);
+	}
+
+	@Test
+	void testComparableIndexes() {
+		final var ap0 = new AssetPreview();
+		ap0.setIndex(0);
+		final var ap1 = new AssetPreview();
+		ap1.setIndex(1);
+		final var ap2 = new AssetPreview();
+		ap2.setIndex(2);
+		final var ap3 = new AssetPreview();
+		ap3.setIndex(3);
+		final var ap4 = new AssetPreview();
+		ap4.setIndex(4);
+		final var ap5 = new AssetPreview();
+		ap5.setIndex(5);
+
+		final var goodOrder = List.of(ap0, ap1, ap2, ap3, ap4, ap5);
+		final var list = new ArrayList<>(goodOrder);
+		Collections.shuffle(list);
+		assertNotEquals(goodOrder, list);
+		assertEquals(goodOrder, list.stream().sorted().collect(toUnmodifiableList()));
+
+		Collections.shuffle(list);
+		assertNotEquals(goodOrder, list);
+		assertEquals(goodOrder, list.stream().sorted().collect(toUnmodifiableList()));
+
+		Collections.shuffle(list);
+		assertNotEquals(goodOrder, list);
+		assertEquals(goodOrder, list.stream().sorted().collect(toUnmodifiableList()));
+	}
+
+	@Test
+	void testComparableNull() {
+		ap.setIndex(0);
+		assertEquals(0, ap.compareTo(null));
+	}
+
+	@Test
+	void testComparableTypes() {
+		final var ap0 = new AssetPreview();
+		ap0.setIndex(0);
+		ap0.setType(ICON_THUMBNAIL);
+		final var ap1 = new AssetPreview();
+		ap1.setIndex(0);
+		ap1.setType(VIDEO_HD);
+		final var ap2 = new AssetPreview();
+		ap2.setIndex(2);
+		ap2.setType(ICON_THUMBNAIL);
+		final var ap3 = new AssetPreview();
+		ap3.setIndex(3);
+		ap3.setType(VIDEO_HD);
+		final var ap4 = new AssetPreview();
+		ap4.setIndex(4);
+		ap4.setType(ICON_THUMBNAIL);
+		final var ap5 = new AssetPreview();
+		ap5.setIndex(4);
+		ap5.setType(VIDEO_HD);
+
+		final var goodOrder = List.of(ap0, ap2, ap4, ap1, ap3, ap5);
+		final var list = new ArrayList<>(goodOrder);
+		Collections.shuffle(list);
+		assertNotEquals(goodOrder, list);
+		assertEquals(goodOrder, list.stream().sorted().collect(toUnmodifiableList()));
 	}
 
 }

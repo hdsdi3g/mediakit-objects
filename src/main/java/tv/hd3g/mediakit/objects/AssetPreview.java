@@ -107,7 +107,7 @@ public class AssetPreview extends AbstractBaseAssets implements Comparable<Asset
 	}
 
 	@Override
-	public int compareTo(final AssetPreview compared) {// TODO test
+	public int compareTo(final AssetPreview compared) {
 		if (compared == null) {
 			return 0;
 		}
