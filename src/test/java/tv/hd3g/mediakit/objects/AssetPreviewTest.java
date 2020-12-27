@@ -28,6 +28,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -36,14 +37,14 @@ import org.junit.jupiter.api.Test;
 class AssetPreviewTest {
 
 	AssetPreview ap;
-	Object o;
+	Map<String, Object> o;
 	URI assetLocation;
 	int index;
 
 	@BeforeEach
 	void init() throws Exception {
 		ap = new AssetPreview();
-		o = new Object();
+		o = Map.of("k0", "v0", "k1", "v1");
 		assetLocation = new URI("file://somewhere");
 		index = new Random().nextInt();
 	}

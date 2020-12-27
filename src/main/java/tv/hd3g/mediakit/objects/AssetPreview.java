@@ -16,6 +16,7 @@
  */
 package tv.hd3g.mediakit.objects;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class AssetPreview extends AbstractBaseAssets implements Comparable<AssetPreview> {
@@ -27,7 +28,7 @@ public class AssetPreview extends AbstractBaseAssets implements Comparable<Asset
 	/**
 	 * Some informations for display it
 	 */
-	private Object options;
+	private Map<String, Object> options;
 	/**
 	 * Relative position with others AssetPreview for this asset.
 	 * Can be a page book index, an audio track, a video version...
@@ -51,14 +52,14 @@ public class AssetPreview extends AbstractBaseAssets implements Comparable<Asset
 	/**
 	 * Some informations for display it
 	 */
-	public void setOptions(final Object options) {
+	public void setOptions(final Map<String, Object> options) {
 		this.options = options;
 	}
 
 	/**
 	 * Some informations for display it
 	 */
-	public Object getOptions() {
+	public Map<String, Object> getOptions() {
 		return options;
 	}
 
