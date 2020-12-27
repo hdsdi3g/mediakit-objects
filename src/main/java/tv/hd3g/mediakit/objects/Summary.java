@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Summary {// TODO test
+public class Summary {// TODO test + comments
 
 	private String mimeCode;
 	private Map<String, String> analysersAbstracts;

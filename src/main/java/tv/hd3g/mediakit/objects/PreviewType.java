@@ -56,4 +56,8 @@ public enum PreviewType {
 	 */
 	BOOK_PAGE;
 
+	// TODO add subtitle ?
+	// TODO add keyframes images ?
+	// TODO add chapters ?
+	// TODO add markers ?
 }

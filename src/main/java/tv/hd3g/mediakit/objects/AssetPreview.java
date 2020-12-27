@@ -20,30 +20,60 @@ import java.util.Objects;
 
 public class AssetPreview extends AbstractBaseAssets implements Comparable<AssetPreview> {
 
+	/**
+	 * How this preview should be used for display
+	 */
 	private PreviewType type;
+	/**
+	 * Some informations for display it
+	 */
 	private Object options;
+	/**
+	 * Relative position with others AssetPreview for this asset.
+	 * Can be a page book index, an audio track, a video version...
+	 */
 	private int index;
 
-	public void setOptions(final Object options) {
-		this.options = options;
-	}
-
-	public Object getOptions() {
-		return options;
-	}
-
+	/**
+	 * How this preview should be used for display
+	 */
 	public void setType(final PreviewType type) {
 		this.type = type;
 	}
 
+	/**
+	 * How this preview should be used for display
+	 */
 	public PreviewType getType() {
 		return type;
 	}
 
+	/**
+	 * Some informations for display it
+	 */
+	public void setOptions(final Object options) {
+		this.options = options;
+	}
+
+	/**
+	 * Some informations for display it
+	 */
+	public Object getOptions() {
+		return options;
+	}
+
+	/**
+	 * Relative position with others AssetPreview for this asset.
+	 * Can be a page book index, an audio track, a video version...
+	 */
 	public int getIndex() {
 		return index;
 	}
 
+	/**
+	 * Relative position with others AssetPreview for this asset.
+	 * Can be a page book index, an audio track, a video version...
+	 */
 	public void setIndex(final int index) {
 		this.index = index;
 	}
