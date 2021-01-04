@@ -20,20 +20,35 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class AssertComputeEngine {// TODO test + comments
+/**
+ * A compute result for an asset
+ */
+public class AssertComputeEngine {
 
+	/**
+	 * Compute result as raw data stored in key/value style
+	 */
 	private Map<String, Object> datas;
 	/**
 	 * Can be sended to web clients without risks (functionnals, security or personnal informations leaks) ?
 	 */
 	private boolean sensibleDatas;
 
+	/**
+	 * Compute result stored as files list
+	 */
 	private List<ComputedRenderedAsset> renderedList;
 
+	/**
+	 * Compute result as raw data stored in key/value style
+	 */
 	public Map<String, Object> getDatas() {
 		return datas;
 	}
 
+	/**
+	 * Compute result as raw data stored in key/value style
+	 */
 	public void setDatas(final Map<String, Object> datas) {
 		this.datas = datas;
 	}
@@ -52,10 +67,16 @@ public class AssertComputeEngine {// TODO test + comments
 		this.sensibleDatas = sensibleDatas;
 	}
 
+	/**
+	 * Compute result stored as files list
+	 */
 	public List<ComputedRenderedAsset> getRenderedList() {
 		return renderedList;
 	}
 
+	/**
+	 * Compute result stored as files list
+	 */
 	public void setRenderedList(final List<ComputedRenderedAsset> renderedList) {
 		this.renderedList = renderedList;
 	}

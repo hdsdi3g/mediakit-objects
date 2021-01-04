@@ -19,33 +19,66 @@ package tv.hd3g.mediakit.objects;
 import java.util.Map;
 import java.util.Objects;
 
-public class ComputedRenderedAsset {// TODO test + comments
+/**
+ * A compute result part as a simple file for an asset
+ */
+public class ComputedRenderedAsset {
 
+	/**
+	 * Type of file (not the mime), like "preview" for to distinguish the other rendered files for this asset.
+	 */
 	private String type;
-	private String hash;
+	/**
+	 * All the digest values for this file: hash type (like MD5) &gt; hash value (like FD45CA19...)
+	 */
+	private Map<String, String> hash;
 	/**
 	 * Engine name, vendor, version who provide the rendered file.
 	 * Beware: web user could see/get this information.
 	 */
 	private String engineProducerName;
+	/**
+	 * Mime code for file, like "application/octet-stream"
+	 */
 	private String mime;
+	/**
+	 * Created date for file
+	 */
 	private long date;
+	/**
+	 * File size
+	 */
 	private long size;
+	/**
+	 * Optional informations for operate the file, like duration, resolution...
+	 */
 	private Map<String, Object> options;
 
+	/**
+	 * Type of file (not the mime), like "preview" for to distinguish the other rendered files for this asset.
+	 */
 	public String getType() {
 		return type;
 	}
 
+	/**
+	 * Type of file (not the mime), like "preview" for to distinguish the other rendered files for this asset.
+	 */
 	public void setType(final String type) {
 		this.type = type;
 	}
 
-	public String getHash() {
+	/**
+	 * All the digest values for this file: hash type (like MD5) &gt; hash value (like FD45CA19...)
+	 */
+	public Map<String, String> getHash() {
 		return hash;
 	}
 
-	public void setHash(final String hash) {
+	/**
+	 * All the digest values for this file: hash type (like MD5) &gt; hash value (like FD45CA19...)
+	 */
+	public void setHash(final Map<String, String> hash) {
 		this.hash = hash;
 	}
 
@@ -64,34 +97,58 @@ public class ComputedRenderedAsset {// TODO test + comments
 		this.engineProducerName = engineProducerName;
 	}
 
+	/**
+	 * Mime code for file, like "application/octet-stream"
+	 */
 	public String getMime() {
 		return mime;
 	}
 
+	/**
+	 * Mime code for file, like "application/octet-stream"
+	 */
 	public void setMime(final String mime) {
 		this.mime = mime;
 	}
 
+	/**
+	 * Created date for file
+	 */
 	public long getDate() {
 		return date;
 	}
 
+	/**
+	 * Created date for file
+	 */
 	public void setDate(final long date) {
 		this.date = date;
 	}
 
+	/**
+	 * File size
+	 */
 	public long getSize() {
 		return size;
 	}
 
+	/**
+	 * File size
+	 */
 	public void setSize(final long size) {
 		this.size = size;
 	}
 
+	/**
+	 * Optional informations for operate the file, like duration, resolution...
+	 */
 	public Map<String, Object> getOptions() {
 		return options;
 	}
 
+	/**
+	 * Optional informations for operate the file, like duration, resolution...
+	 */
 	public void setOptions(final Map<String, Object> options) {
 		this.options = options;
 	}

@@ -18,7 +18,7 @@ package tv.hd3g.mediakit.objects;
 
 import java.util.Map;
 
-public class AssertComputed { // TODO test
+public class AssertComputed {
 
 	/**
 	 * Map of compute engine name -&gt; compute result for this asset
